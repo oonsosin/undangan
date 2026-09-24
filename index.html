@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The Wedding of Vania & Riyan</title>
+  <title>Undangan Pernikahan</title>
   <style>
     * {
       margin: 0;
@@ -25,12 +25,18 @@
   </style>
 </head>
 <body>
-  <iframe id="weddingFrame" src="" allow="autoplay"></iframe>
+  <iframe id="weddingFrame" allow="autoplay" src=""></iframe>
 
   <script>
-    var scriptUrl = "https://script.google.com/macros/s/AKfycbx7BO4qVL5dPBh8S2FLrIzd-3-j7nwD4zyuUGqzugrft8O2zGY3zTgw8AXcq-ig0LnF/exec";
-    var params = window.location.search;
-    document.getElementById("weddingFrame").src = scriptUrl + params;
+    var baseUrl = "https://script.google.com/macros/s/AKfycbwA4XQEf5KisFZWQCbDjnw3iTlz2pzahu5XvgdBtwvezljxA_OKBohYDq8AndY3Ou0s/exec";
+    var query = window.location.search;
+
+    // Jika link dibuka tanpa parameter tambahan, teruskan default id klien
+    if (!query || query === "") {
+      query = "?id=vania-riyan";
+    }
+
+    document.getElementById("weddingFrame").src = baseUrl + query;
   </script>
 </body>
 </html>
